@@ -9,6 +9,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class='navbar navbar-fixed-top navbar-inverse'>
+      <div class='container'>
+        <nav>
+          <ul class='nav navbar-nav navbar-left'>
+            <li><%= link_to "About Small Satellites", '#' %></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul class='nav navbar-nav navbar-right'>
+            <li><%= link_to "Distributed Systems in Space", "/small_sat/about" %></li>
+            <li><%= link_to "Missions", '#' %></li>
+            <li><%= link_to "Inter-satellite Communications", '#' %></li>
+            <li><%= link_to "Design Parameters", '#' %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
