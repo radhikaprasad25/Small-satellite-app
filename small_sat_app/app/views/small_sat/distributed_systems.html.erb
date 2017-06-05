@@ -1,2 +1,141 @@
-<h1>SmallSat#distributed_systems</h1>
-<p>Find me in app/views/small_sat/distributed_systems.html.erb</p>
+<html>
+<head>
+<style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(function() {
+    var $body = $('body');
+    function animatedNavigation(link, tag) {
+      $(link).click(function(e) {
+        e.preventDefault();
+        $body.animate({ scrollTop: $(tag).offset().top - 50 }, 1000);
+      });
+    }
+
+    animatedNavigation('#flying-spacecraft-nav', '#formation-flying-spacecrafts');
+    animatedNavigation('#flying-spacecraft-nav-1', '#satellite-constellation');
+    animatedNavigation('#flying-spacecraft-nav-2', '#swarms');
+    animatedNavigation('#flying-spacecraft-nav-3', '#fractionated-spacecraft');
+  })
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Distributed Systems in Space (DSS)</h1>
+    <p>
+      Multiple small spacecrafts provide higher efficiency gain by promoting
+      adaptability, scalability, reconfigurability, and affordability compared to a
+      single large satellite. When satellites fly in formation, it is required to
+      maintain specific distance and orientation rela- tive to each other at
+      specified altitudes. Depending on the formation characteristics, there can be
+      two different approaches: ground based control and autonomous operations.
+      In ground based control, formation flying satellites send the Global
+      Navigation Satellite System (GNSS) measurements to the ground control center
+      that provides necessary in- structions to maneuver into appropriate position
+      in the formations. This approach is suit- able for formations with several
+      kilometers of separation distance between the satellites. In autonomous
+      formation flying, measurements are transmitted among the spacecrafts
+      allowing the satellites to calculate the relative position in the
+      formation, and Attitude and Orbit Control System (AOCS) is used to
+      maneuver the satellite into appropriate positions. Autonomous approach
+      is more difficult and riskier, and is suitable for missions that require
+      tighter formations with frequent and autonomous adjustments of the
+      relative positions.
+    </p>
+    <p>
+      Small satellites with distributed computing capabilities can fly
+      in various config- urations, for example, formation flying spacecraft,
+      satellite constellation, swarms, and fractionated spacecraft.
+      These multi-satellite configurations are new prototypes for
+      inter-planetary explorations and remote sensing. Multi-satellite
+      configurations are sub-sets of a more general class described as
+      Distributed Space Systems (DSS) which fall in to four different categories:
+      <ul style="list-style-type:disc">
+        <li><a href="#formation-flying-spacecrafts" id="flying-spacecraft-nav">Formation flying spacecrafts</a></li>
+        <li><a href="#satellite-constellation" id="flying-spacecraft-nav-1">Satellite Constellation</a></li>
+        <li><a href="#swarms" id="flying-spacecraft-nav-2">Swarms</a></li>
+        <li><a href="#fractionated-spacecraft" id="flying-spacecraft-nav-3">Fractionated spacecraft</a></li>
+      </ul>
+    </p>
+    <a id="formation-flying-spacecrafts"><h2 text-align="left">Formation flying spacecrafts</h2></a>
+    <p>In accordance with the engineering definition, for formation flying of
+      spacecrafts, it is required to maintain relative separation, orientation
+      or position among the space-crafts. The Leader-Follower (A-Train) is a
+      good example of this pattern. In Leader-Follower pattern, multiple
+      spacecrafts will be orbiting the Earth in the same orbit, separated from
+      each other at a specific distance. The A-Train or Afternoon-Train
+      initially consisted of eight U.S. and international Earth science
+      satellites that fly approximately within seconds to minutes of each other
+      to enable multiple science missions. As of June 2014, there are six
+      active satellites namely, GCOM-W1 (SHIZUKU), Aqua, CloudSat, CALIPSO,
+      Orbiting Carbon Observatory-2 (OCO-2) and Aura. The
+      joint measure- ments provide an excellent sensor system for
+      Earth observations.
+    </p>
+    <%= image_tag('Atrain.jpg', alt: "Atrain formation flying pattern", size: '500x400', class: "image_dss") %>
+    <figcaption>Atrain formation flying pattern</figcaption>
+    <a id="satellite-constellation"><h2 text-align="left">Satellite constellation</h2></a>
+    <p>
+      A satellite constellation is a set of similar or dissimilar satellites
+      distributed in space so that they overlap well within the coverage area
+      to accomplish mission objectives. A Cluster configuration is a subgroup
+      of Constellation as it covers a smaller portion of the Earth. A Cluster
+      consists of a number of satellites distributed in different orbital planes
+      that operate cooperatively. The Flower constellation and TECHSAT-21 are
+      examples of Cluster configuration.
+    </p>
+      <%= image_tag('cluster.jpg', alt: "Cluster formation flying pattern", size: '500x400', class: "image_dss") %>
+      <figcaption>Cluster formation flying pattern</figcaption>
+    <p>
+      A satellite constellation is a more generalized configuration covering
+      a larger portion of the Earth surface. There is no governing rules for
+      inter-dependency for the satellites in a Constellation. The Global
+      Positioning System (GPS) and IRIDIUM are examples of Constellation
+      configuration. The IRIDIUM consists of 66 Low Earth Orbiting (LEO)
+      satellites arranged in 6 orbital planes, with 11 satellites per plane,
+      at an altitude of 780 km above the Earth surface. Figure below shows the
+      Constellation configuration pattern for small satellites.
+    </p>
+    <%= image_tag('constellation.jpg', alt: "Constellation formation flying pattern", size: '500x400', class: "image_dss") %>
+    <figcaption>Constellation formation flying pattern</figcaption>
+    <a id="swarms"><h2 text-align="left">Swarms</h2></a>
+    <p>
+      A satellite swarm is defined as a self-organized, self-functioning
+      satellites that communicate directly or indirectly that enables to
+      achieve a common mission. It can be considered as a set of agents that
+      take decisions independently without ground station intervention. It is
+      highly autonomous with very high possibilities of reconfiguration or
+      extension. The whole system is very complex and also requires precise
+      navigational accuracy. The System F6, ”Future, Fast, Flexible,
+      Fractionated Free-Flying”, project is an example of Swarms developed by
+      the Defense Advanced Research Projects Agency (Darpa). The project aimed
+      to replace traditional integrated satellites by clusters of smaller,
+      cheaper, wirelessly-interconnected space modules that form a virtual
+      satellite. System F6 intended to partition the functionalities performed
+      by a large satellite (power, receivers, control modules, etc.) and assign
+      each task to a dedicated micro-satellite. However, Darpa gave up on
+      formation flying spacecraft concept in May, 2013. The Figure shows the
+      artistic view of the System F6 project.
+    </p>
+    <%= image_tag('systemf6.jpg', alt: "Swarms", size: '500x400', class: "image_dss") %>
+    <figcaption>Swarms: System F6 Project</figcaption>
+    <a id="fractionated-spacecraft"><h2 text-align="left">Fractionated spacecraft</h2></a>
+    <p>
+      A fractionated spacecraft is a new architectural model, whereby the
+      functionalities of a large satellite is distributed across a cluster of
+      small satellites which are wirelessly interconnected. Each small satellite
+      has different functionalities making the whole system heterogeneous.
+      This configuration needs higher position and orbital control of the
+      individual satellites with a moderate system design complexity. Such a
+      system enhances robustness and flexibility in the architecture, while
+      shortening development time and launch constraints.
+    </p>
+  </div>
+</div>
+</body>
+</html>
