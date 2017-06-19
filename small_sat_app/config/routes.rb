@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'small_sat/intersatellite_communications'
   get 'small_sat/design_parameters'
   get 'small_sat/signup', to: 'users#new', path: 'small-sat/signup'
-  resources :users
+  resources :users, path: 'small-sat/users'
 end
