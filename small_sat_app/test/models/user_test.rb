@@ -40,7 +40,7 @@ class UserTest < ActiveSupport::TestCase
     user_new = @user.dup
     user_new.email = @user.email.upcase
     @user.save
-    assert user_new.valid?
+    assert_not user_new.valid?
   end
 
   test 'email addresses should be saved as lowercase' do
